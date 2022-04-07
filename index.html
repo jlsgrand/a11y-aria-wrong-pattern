@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple ARIA barre d'outils</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exemple de barre d'outil avec erreurs</h1>
+
+        <div class="format" aria-label="Formattage du texte" aria-controls="main-content">
+            <div class="menu-popup group">
+              <button tabindex="0" type="button" aria-haspopup="true" aria-controls="menu1" class="item menu-button" tabindex="-1">
+                Changer la police
+                <span></span>
+              </button>
+              <ul id="menu1" aria-label="Police de caractère">
+                <li role="menuitemradio" aria-checked="true" style="font-family: sans-serif">Sans-serif</li>
+                <li role="menuitemradio" aria-checked="false" style="font-family: serif">Serif</li>
+                <li role="menuitemradio" aria-checked="false" style="font-family: monospace">Monospace</li>
+                <li role="menuitemradio" aria-checked="false" style="font-family: fantasy">Fantasy</li>
+                <li role="menuitemradio" aria-checked="false" style="font-family: cursive">Cursive</li>
+              </ul>
+            </div>
+        
+            <div class="group">
+                <div class="item spinbutton" role="spinbutton" tabindex="-1" aria-valuenow="1024" aria-valuetext="1024px" aria-valuemin="320" aria-valuemax="1920" aria-label="Largeur du texte" data-unit="px" data-action="content-width">
+                  <span class="value">1024px</span>
+                  <span class="increase">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <polygon class="increase" fill="#333" points="0,12 11,12 6,2"></polygon>
+                    </svg>
+                  </span>
+                  <span class="decrease">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                      <polygon class="decrease" fill="#333" points="0,2 11,2 6,12"></polygon>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+            <div class="group">
+              <div class="item spinbutton" role="spinbutton" tabindex="-1" aria-valuetext="14pt" aria-valuemin="8" aria-valuemax="40" data-unit="pt" data-action="font-size">
+                <span class="value">14pt</span>
+                <span class="increase">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <polygon class="increase" fill="#333" points="0,12 11,12 6,2"></polygon>
+                  </svg>
+                </span>
+                <span class="decrease">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                    <polygon class="decrease" fill="#333" points="0,2 11,2 6,12"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+        
+            <div class="group">
+              <label class="input"><input id="checkbox" class="item nightmode" type="checkbox" tabindex="-1"> Night Mode</label>
+              <a id="link" class="item link" href="help.html" tabindex="-1">Help</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h2>Le contenu</h2>
+        <p>
+            Pellentesque sodales ante in tellus faucibus lacinia. Etiam bibendum venenatis est ut lobortis. Integer id
+            rutrum metus, fringilla faucibus erat. Sed sit amet massa et ex fermentum faucibus. In mattis id dui
+            faucibus lacinia. Cras dolor nisi, vulputate nec tempor ut, euismod non ipsum. Donec fermentum dui a dictum
+            facilisis. In mattis dui id orci aliquam consectetur. Nullam lacus justo, vulputate eleifend augue id,
+            vestibulum ultrices felis. Pellentesque ex ligula, sagittis efficitur ante a, viverra euismod lacus. Cras mi
+            risus, accumsan id diam eget, imperdiet consequat eros.
+        </p>
+        <p>
+            Nunc accumsan eros ac ligula commodo congue. Phasellus eleifend tempor cursus. Nullam porta erat eget tortor
+            finibus, a ultrices sem volutpat. Donec felis neque, fringilla quis pretium eget, vulputate a augue. Integer
+            eu orci quis nulla interdum ornare ut a nisl. Quisque sagittis leo vel laoreet sodales. Integer egestas
+            lacus et ipsum volutpat, non suscipit tortor suscipit. Proin venenatis vehicula sapien sed fermentum.
+            Curabitur tristique, justo at dapibus ornare, nisl libero luctus nulla, nec porta magna dui at tortor. Nulla
+            porttitor sodales mi, a eleifend urna lacinia nec.
+        </p>
+        <p>
+            Donec condimentum leo ac congue varius. Fusce vitae eros sem. Etiam eu tortor sagittis, luctus odio a,
+            egestas tellus. Curabitur enim urna, finibus in lorem vitae, scelerisque congue nibh. Phasellus semper,
+            ipsum faucibus placerat tempus, ex sapien egestas dolor, non bibendum quam ligula eu risus. Curabitur at mi
+            vestibulum, luctus tortor sit amet, hendrerit erat. Proin cursus elit eu arcu sagittis bibendum. Nunc eget
+            rhoncus mi, eget molestie nulla. Nam at enim a purus tincidunt lobortis sit amet in tellus. Integer sapien
+            leo, pharetra efficitur tristique at, placerat vel massa. Nullam dolor eros, placerat at pellentesque a,
+            fermentum eu sapien. Morbi sodales a purus sit amet molestie. Praesent quis euismod nunc, hendrerit maximus
+            ipsum. Proin ut felis vitae diam congue mollis. Maecenas ut nisi accumsan, pretium risus quis, luctus nisi.
+            Cras id aliquet mauris, a vestibulum diam.
+        <p>
+            Quisque ac tempor ligula, at posuere libero. Sed vitae massa porttitor, condimentum metus non, placerat
+            nulla. Aenean congue tempus mollis. Curabitur ante ante, mollis vel odio ac, tempus varius mi. Aenean
+            porttitor sem quis molestie sollicitudin. Sed tellus libero, tempor semper sollicitudin at, accumsan sit
+            amet lacus. Quisque auctor nulla nec est auctor pellentesque. Aliquam suscipit varius enim sit amet
+            dignissim. Nunc semper, turpis non imperdiet porta, libero enim commodo nisl, non ullamcorper tortor nibh
+            quis velit. Donec maximus vel tortor at tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Proin varius condimentum purus quis maximus. Duis a cursus ligula, ut pretium est. Sed varius euismod nulla,
+            luctus condimentum ipsum iaculis ac.
+        </p>
+        <p>
+            Proin rhoncus mattis lacinia. Pellentesque volutpat, ex ac hendrerit rhoncus, arcu justo vehicula ligula, in
+            elementum sem tortor vel dui. Suspendisse venenatis finibus tortor. Donec ut urna ac augue varius facilisis
+            in ut velit. Vivamus pretium nec leo quis dignissim. In aliquam velit nibh, vehicula hendrerit sapien
+            scelerisque eu. Maecenas vestibulum congue nunc sed faucibus. Curabitur ac turpis id mauris luctus fringilla
+            ac ut erat. Ut egestas consectetur turpis id varius. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Orci varius natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Donec vestibulum dolor non sapien eleifend, quis fringilla sapien bibendum. Ut vitae
+            enim et ante pretium mattis volutpat ut neque. Phasellus leo purus, sodales eget turpis in, ullamcorper
+            ultrices urna.
+        </p>
+    </main>
+    <footer><h2>Contactez moi, là ou là ou là</h2></footer>
+
+    <script src="aria-toolbar.js"></script>
+</body>
+
+</html>
